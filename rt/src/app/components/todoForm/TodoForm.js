@@ -22,6 +22,7 @@ const TodoForm = () => {
     setItemString('')
   }
   const handleClear = () => dispatch({ type: 'CLEAR_COMPLETED' })
+  
   return (
     <form onSubmit={handleSubmit}>
       <FlexContainer fdc aic>

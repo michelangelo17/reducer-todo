@@ -1,12 +1,15 @@
 import React from 'react'
-import { P } from '../../../emotionalThings/EmoTools'
+import { P, FlexContainer, Small } from '../../../emotionalThings/EmoTools'
 
 const TodoItem = props => (
   <>
     {props.todo.completed ? (
-      <P m='10px auto' lt>
-        {props.todo.item}
-      </P>
+      <FlexContainer fdc m='10px auto'>
+        <P m='0 10px 0 0' lt>
+          {props.todo.item}
+        </P>
+        <Small>(Completed: {props.todo.dateCompleted})</Small>
+      </FlexContainer>
     ) : (
       <P m='10px auto'>{props.todo.item}</P>
     )}

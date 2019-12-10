@@ -1,7 +1,8 @@
+import moment from 'moment'
+
 export const intitalTodoState = []
 
 export const todoListReducer = (state, action) => {
-  console.log(state, action)
   switch (action.type) {
     case 'ADD_TODO':
       return [...state, action.payload]
@@ -12,11 +13,14 @@ export const todoListReducer = (state, action) => {
               item: todoItem.item,
               completed: !todoItem.completed,
               id: todoItem.id,
+              dateCompleted: !todoItem.completed
+                ? moment().format('MMM Do YY, h:mm a')
+                : '',
             }
           : todoItem
       )
-      case 'CLEAR_COMPLETED' :
-        return state.filter(todo => !todo.completed)
+    case 'CLEAR_COMPLETED':
+      return state.filter(todo => !todo.completed)
     default:
       return state
   }

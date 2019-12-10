@@ -187,6 +187,22 @@ export const P = styled.p`
   text-decoration: ${textDecorationMap};
 `
 
+export const Small = styled.small`
+  width: ${props => props.w};
+  height: ${props => props.h};
+  margin: ${props => props.m};
+  padding: ${props => props.p};
+  min-width: ${props => props.minw};
+  max-width: ${props => props.maxw};
+  min-height: ${props => props.minh};
+  max-height: ${props => props.maxh};
+  font-size: ${styleVariables.fontSizeSmall};
+  color: ${styleVariables.mainFontColor};
+  font-family: ${styleVariables.mainFontFamily};
+  text-align: ${props => props.ta};
+  text-decoration: ${textDecorationMap};
+`
+
 export const Button = styled.button`
   width: ${props => props.w};
   height: ${props => props.h};
