@@ -7,7 +7,7 @@ import {
 import { TodoContext } from '../../contexts/contexts'
 
 const TodoForm = () => {
-  const { dispatch } = useContext(TodoContext)
+  const { setTodoArray } = useContext(TodoContext)
   const [itemString, setItemString] = useState('')
 
   const handleChange = e => setItemString(e.target.value)
@@ -18,11 +18,11 @@ const TodoForm = () => {
       completed: false,
       id: Date.now(),
     }
-    itemString !== '' && dispatch({ type: 'ADD_TODO', payload: newItem })
+    itemString !== '' && setTodoArray({ type: 'ADD_TODO', payload: newItem })
     setItemString('')
   }
-  const handleClear = () => dispatch({ type: 'CLEAR_COMPLETED' })
-  
+  const handleClear = () => setTodoArray({ type: 'CLEAR_COMPLETED' })
+
   return (
     <form onSubmit={handleSubmit}>
       <FlexContainer fdc aic>

@@ -4,11 +4,11 @@ import { FlexContainer } from '../../emotionalThings/EmoTools'
 import { TodoContext } from '../../contexts/contexts'
 
 const TodoList = () => {
-  const { todoArray, dispatch } = useContext(TodoContext)
+  const { todoArray, setTodoArray } = useContext(TodoContext)
   return (
     <>
       {todoArray.map(todo => (
-        <FlexContainer onClick={e => dispatch({ type: 'CROSSOUT', payload: todo })} key={todo.id}>
+        <FlexContainer onClick={e => setTodoArray({ type: 'CROSSOUT', payload: todo })} key={todo.id}>
           <TodoItem todo={todo} />
         </FlexContainer>
       ))}

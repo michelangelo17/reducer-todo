@@ -1,7 +1,5 @@
 import moment from 'moment'
 
-export const intitalTodoState = []
-
 export const todoListReducer = (state, action) => {
   switch (action.type) {
     case 'ADD_TODO':
